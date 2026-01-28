@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto Juliae</title>
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;   /* stack sections vertically */
+            gap: 30px;                /* space between the two sections */
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        textarea {
+            min-height: 200px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .output {
+            min-height: 200px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #f0f0f0;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #d5d5d5;
+            border: 1px solid #bbb;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c5c5c5;
+        }
+
+        /* The Flash State */
+        #copyBtn.success {
+            background-color: #28a745 !important;
+            color: white !important;
+            border-color: #1e7e34 !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="section">
+        <label for="inputArea"><strong>Entrada - Arquivo Prestadores</strong></label>
+        <textarea id="inputArea" placeholder="Insira os dados aqui..."></textarea>
+        <br>
+        <button onclick="convertData()">Converter</button>
+        <br>
+    </div>
+
+    <div class="section">
+        <label for="outputArea"><strong>Saída</strong></label>
+        <div id="outputArea" class="output">Resultados.</div>
+        <br>
+        <button id="copyBtn" onclick="copyToClipboard()">Copiar</button>
+        <button id="downloadBtn">CSV</button>
+    </div>
+</div>
+
+<script>
+function convertData() {
+    const input = document.getElementById('inputArea').value;
+    const lines = input.trim().split('\n');
+    const header = "ARQUIVO;PROCESSO;IPREV;NOME;CPF;PRINCIPAL;HONORÁRIOS;VINCULO;ÓRGÃO";
+    
+    const results = lines.map((line, index) => {
+        // 0. Extract VALOR (Pattern: all until the word Valor, trimed)
+        const moneyValue = line.match('^(.*)Valor')?.[1].trim() || "";
+
+        // 1. Extract Processo (Pattern: 0000000-00.0000.0.00.0000)
+        const processo = line.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}/)?.[0] || "";
+
+        // 2. Extract CPF (Pattern: 000.000.000-00)
+        const cpf = line.match(/\d{3}\.\d{3}\.\d{3}-\d{2}/)?.[0] || "";
+
+        // 3. Extract IPREV (Pattern: Number after word IPREV)
+        const iprev = line.match(/IPREV\s+([\d\/]+)/)?.[1] || "";
+
+        // 4. Extract Nome (Text between the hyphen after CPF and the following dot)
+        const nomeMatch = line.match(/-\s+([^.]+)\./);
+        const nome = nomeMatch ? nomeMatch[1].trim() : "";
+
+        // 5. Extract Vinculo (The text at the very end of the line)
+        const vinculo = line.split('.').pop().trim();
+
+//        // 6. Extract Value (Looks for R$ followed by numbers/dots/commas)
+//        const moneyMatch = line.match(/R\$\s?[\d.,]+/);
+//        const moneyValue = moneyMatch ? moneyMatch[0] : "R$ -";
+
+        // 7. Determine if Value is PRINCIPAL or HONORÁRIOS
+        let principal = "-";
+        let honorarios = "-";
+        
+        if (line.toUpperCase().includes("PRINCIPAL")) {
+            principal = moneyValue;
+        } else if (line.toUpperCase().includes("HONOR")) {
+            honorarios = moneyValue;
+        }
+
+        // 8. Determine ÓRGÃO
+        const orgao = vinculo.split(' ')[1] || "";
+        
+
+        // Return the semicolon-separated row
+        return `${index + 1};${processo};${iprev};${nome};${cpf};${principal};${honorarios};${vinculo};${orgao}`;
+    });
+
+    document.getElementById('outputArea').textContent = results.join('\n');
+}
+
+function flashCopyBtn() {
+    const btn = document.getElementById('copyBtn');
+    const originalText = btn.innerText;
+
+    // Apply flash state
+    btn.innerText = "Copied!";
+    btn.classList.add('success');
+
+    // Revert state after 1.5 seconds
+    setTimeout(() => {
+        btn.innerText = originalText;
+        btn.classList.remove('success');
+    }, 1500);
+}
+
+async function copyToClipboard() {
+    const outputArea = document.getElementById('outputArea');
+    const outputText = outputArea.textContent;
+
+    if (!outputText) {
+        return;
+    }
+
+    try {
+        // Modern Clipboard API
+        await navigator.clipboard.writeText(outputText);
+        flashCopyBtn();
+    } catch (err) {
+        // Fallback for older browsers or insecure contexts (HTTP)
+        const textArea = document.createElement("textarea");
+        textArea.value = outputText;
+        
+        // Ensure the textarea is not visible but part of the DOM
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        textArea.style.top = "0";
+        document.body.appendChild(textArea);
+        
+        textArea.focus();
+        textArea.select(); // Now this works because it's a textarea
+
+        try {
+            document.execCommand('copy');
+            flashCopyBtn();
+        } catch (copyErr) {
+            console.error('Fallback copy failed', copyErr);
+        }
+
+        document.body.removeChild(textArea);
+    }
+}
+
+// Helper: convert plain text (rows separated by newlines, columns by commas)
+// into a Blob and trigger a download.
+function downloadCSV(csvContent, filename = 'data.csv') {
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('href', url);
+    a.setAttribute('download', filename);
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    const div = document.getElementById('outputArea');
+    // Trim leading/trailing whitespace and ensure each line ends with a newline
+    const csvText = div.textContent.trim() + '\n';
+    downloadCSV(csvText);
+});
+</script>
+
+</html>
