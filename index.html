@@ -124,8 +124,8 @@ function convertData() {
 //        const moneyValue = moneyMatch ? moneyMatch[0] : "R$ -";
 
         // 7. Determine if Value is PRINCIPAL or HONORÁRIOS
-        let principal = "-";
-        let honorarios = "-";
+        let principal = "0";
+        let honorarios = "0";
         
         if (line.toUpperCase().includes("PRINCIPAL")) {
             principal = moneyValue;
