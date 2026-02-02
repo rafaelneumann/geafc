@@ -117,7 +117,12 @@ function convertData() {
         const nome = nomeMatch ? nomeMatch[1].trim() : "";
 
         // 5. Extract Vinculo (The text at the very end of the line)
-        const vinculo = line.split('.').pop().trim();
+        let vinculo = '';
+        if (line.endsWith('.')) {
+            vinculo = line.substr(0, line.length - 1).split('.').pop().trim();
+        } else {
+            vinculo = line.split('.').pop().trim();
+        }
 
 //        // 6. Extract Value (Looks for R$ followed by numbers/dots/commas)
 //        const moneyMatch = line.match(/R\$\s?[\d.,]+/);
