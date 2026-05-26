@@ -111,9 +111,13 @@ function convertData() {
 
         // 3. Extract IPREV (Pattern: Number after word IPREV)
         const iprev = line.match(/IPREV\s+([\d\/]+)/)?.[1] || "";
+        const iprev2 = line.match(/IPREV\s+(\d+\/\d+)/)?.[1] || "";
 
         // 4. Extract Nome (Text between the hyphen after CPF and the following dot)
-        const nomeMatch = line.match(/-\s+([^.]+)\./);
+//        const nomeMatch = line.match(/-\s+([^.]+)\./);
+//        const nome = nomeMatch ? nomeMatch[1].trim() : "";
+
+        const nomeMatch = line.match(/-\s+(.*?)\.?\s*IPREV/i);
         const nome = nomeMatch ? nomeMatch[1].trim() : "";
 
         // 5. Extract Vinculo (The text at the very end of the line)
@@ -123,6 +127,8 @@ function convertData() {
         } else {
             vinculo = line.split('.').pop().trim();
         }
+
+        let vinculo2 = line.replace(/^.*IPREV \d+\/\d+\.?\s*(.*?)\.?$/gm, '$1');
 
 //        // 6. Extract Value (Looks for R$ followed by numbers/dots/commas)
 //        const moneyMatch = line.match(/R\$\s?[\d.,]+/);
@@ -139,11 +145,10 @@ function convertData() {
         }
 
         // 8. Determine ÓRGÃO
-        const orgao = vinculo.split(' ')[1] || "";
+        const orgao = vinculo2.split(' ')[1] || "";
         
-
         // Return the semicolon-separated row
-        return `${index + 1};${processo};${iprev};${nome};${cpf};${principal};${honorarios};${vinculo};${orgao}`;
+        return `${index + 1};${processo};${iprev2};${nome};${cpf};${principal};${honorarios};${vinculo2};${orgao}`;
     });
 
     document.getElementById('outputArea').textContent = results.join('\n');
