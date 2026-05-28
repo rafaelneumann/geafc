@@ -111,7 +111,7 @@ function convertData() {
 
         // 3. Extract IPREV (Pattern: Number after word IPREV)
         const iprev = line.match(/IPREV\s+([\d\/]+)/)?.[1] || "";
-        const iprev2 = line.match(/IPREV\s+(\d+\/\d+)/)?.[1] || "";
+        const iprev2 = line.match(/IPREV\s?(\d+\/\d+)/)?.[1] || "";
 
         // 4. Extract Nome (Text between the hyphen after CPF and the following dot)
 //        const nomeMatch = line.match(/-\s+([^.]+)\./);
@@ -128,7 +128,7 @@ function convertData() {
             vinculo = line.split('.').pop().trim();
         }
 
-        let vinculo2 = line.replace(/^.*IPREV \d+\/\d+\.?\s*(.*?)\.?$/gm, '$1');
+        let vinculo2 = line.replace(/^.*IPREV\s?\d+\/\d+\.?\s*(.*?)\.?$/gm, '$1');
 
 //        // 6. Extract Value (Looks for R$ followed by numbers/dots/commas)
 //        const moneyMatch = line.match(/R\$\s?[\d.,]+/);
